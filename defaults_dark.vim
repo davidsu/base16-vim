@@ -6,6 +6,7 @@ highlight DiffDelete ctermfg=NONE ctermbg=52 guibg=#5D1F24
 highlight CursorLine guibg=#225A70
 highlight CursorColumn guibg=#225A70
 highlight CursorLineNr guifg=#ffff00
+highlight Visual guibg=#003A70 
 
 hi MatchParen cterm=bold ctermbg=197 ctermfg=232 guifg=#000000 guibg=#F72B59
 highlight ColorColumn guibg=#4A0B0F
