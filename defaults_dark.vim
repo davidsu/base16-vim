@@ -3,8 +3,12 @@ highlight DiffChange ctermfg=NONE ctermbg=237 guibg=#04282E guifg=NONE
 highlight DiffText ctermfg=NONE ctermbg=25 guibg=#004689 guifg=NONE
 highlight DiffDelete ctermfg=NONE ctermbg=52 guibg=#5D1F24 
 
-highlight CursorLine guibg=#004966
-highlight CursorColumn guibg=#004E6C
+autocmd InsertEnter * highlight CursorLine guibg=#004966
+autocmd InsertEnter * highlight CursorColumn guibg=#004E6C
+autocmd InsertLeave * highlight CursorLine guibg=#404344
+autocmd InsertLeave * highlight CursorColumn guibg=#404344
+highlight CursorLine guibg=#404344
+highlight CursorColumn guibg=#404344
 highlight CursorLineNr guifg=#ffff00
 highlight Visual guibg=#003A70 
 
