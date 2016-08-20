@@ -1,5 +1,5 @@
 highlight DiffAdd ctermfg=NONE ctermbg=22 guibg=#1A4D22 guifg=NONE
-highlight DiffChange ctermfg=NONE ctermbg=237 guibg=#04282E guifg=NONE
+highlight DiffChange ctermfg=NONE ctermbg=237 guibg=#4D4306 guifg=NONE
 highlight DiffText ctermfg=NONE ctermbg=25 guibg=#004689 guifg=NONE
 highlight DiffDelete ctermfg=NONE ctermbg=52 guibg=#5D1F24 
 
