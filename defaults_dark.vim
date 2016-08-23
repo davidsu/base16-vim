@@ -3,10 +3,13 @@ highlight DiffChange ctermfg=NONE ctermbg=237 guibg=#4D4306 guifg=NONE
 highlight DiffText ctermfg=NONE ctermbg=25 guibg=#004689 guifg=NONE
 highlight DiffDelete ctermfg=NONE ctermbg=52 guibg=#5D1F24 
 
-autocmd InsertEnter * highlight CursorLine guibg=#004966
-autocmd InsertEnter * highlight CursorColumn guibg=#004E6C
-autocmd InsertLeave * highlight CursorLine guibg=#404344
-autocmd InsertLeave * highlight CursorColumn guibg=#404344
+silent! autocmd! Colorstuff
+augroup Colorstuff
+  autocmd InsertEnter * highlight CursorLine guibg=#004966
+  autocmd InsertEnter * highlight CursorColumn guibg=#004E6C
+  autocmd InsertLeave * highlight CursorLine guibg=#404344
+  autocmd InsertLeave * highlight CursorColumn guibg=#404344
+augroup END
 highlight CursorLine guibg=#404344
 highlight CursorColumn guibg=#404344
 highlight CursorLineNr guifg=#ffff00
@@ -22,3 +25,7 @@ hi StatusLine guifg=#6D4A31 ctermbg=001
 hi StatusLineNC guibg=#6D4A31
 
 
+" terminal with true colors need some help...
+let g:terminal_color_10="#7ABB5E"
+let g:terminal_color_1="#F26E68"
+let g:terminal_color_11="#F7CA88"
