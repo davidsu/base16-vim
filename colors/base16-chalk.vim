@@ -206,6 +206,32 @@ call <sid>hi("htmlTag",     s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("javaScript",        s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("javaScriptBraces",  s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("javaScriptNumber",  s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("javascriptCommentTodo",  s:gui05, "", s:cterm05, "", "", "")
+
+" let s:gui05 = "D4B0B5"
+" call <sid>hi("javascriptIdentifierName",  "d0d0d0", "", s:cterm05, "", "", "")
+"
+" call <sid>hi("javascriptCommentTodo",  s:gui05, "", s:cterm05, "", "", "")
+" call <sid>hi("jsFuncParens",  s:gui05, "", s:cterm05, "", "", "")
+" call <sid>hi("jsFuncBraces",  s:gui05, "", s:cterm05, "", "", "")
+" call <sid>hi("jsParens",  s:gui05, "", s:cterm05, "", "", "")
+" call <sid>hi("jsBraces",  s:gui05, "", s:cterm05, "", "", "")
+"   call s:HL("javaScriptBraces", s:blue, "", "")
+"   call s:HL("javaScriptParens", s:blue, "", "")
+"   call s:HL("javaScriptIdentifier", s:pink, "", "")
+"   call s:HL("javaScriptFunction", s:blue, "", "bold")
+"   call s:HL("javaScriptConditional", s:purple, "", "bold")
+"   call s:HL("javaScriptRepeat", s:purple, "", "bold")
+"   call s:HL("javaScriptBoolean", s:green, "", "bold")
+"   call s:HL("javaScriptNumber", s:orange, "", "")
+"   call s:HL("javaScriptMember", s:navy, "", "")
+"   call s:HL("javaScriptReserved", s:navy, "", "")
+"   call s:HL("javascriptNull", s:comment, "", "bold")
+"   call s:HL("javascriptGlobal", s:foreground, "", "")
+"   call s:HL("javascriptStatement", s:pink, "", "")
+"   call s:HL("javaScriptMessage", s:foreground, "", "")
+"   call s:HL("javaScriptMember", s:foreground, "", "")
+
 
 " Mail highlighting
 call <sid>hi("mailQuoted1",  s:gui0A, "", s:cterm0A, "", "", "")

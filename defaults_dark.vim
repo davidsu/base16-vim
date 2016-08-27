@@ -16,7 +16,7 @@ highlight CursorLineNr guifg=#ffff00
 highlight Visual guibg=#003A70 
 
 hi MatchParen cterm=bold ctermbg=197 ctermfg=232 guifg=#000000 guibg=#F72B59
-highlight ColorColumn guibg=#271D1D
+highlight ColorColumn guibg=#302E27
 
 hi Folded guifg=#A4C662 guibg=#444444
 hi Comment guifg=#A0A091 guibg=NONE
