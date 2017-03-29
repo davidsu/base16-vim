@@ -29,3 +29,4 @@ hi StatusLineNC guibg=#6D4A31
 let g:terminal_color_10="#7ABB5E"
 let g:terminal_color_1="#F26E68"
 let g:terminal_color_11="#F7CA88"
+hi number ctermfg=10
