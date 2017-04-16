@@ -1,3 +1,5 @@
+" vi:syntax=vim
+
 " base16-vim (https://github.com/chriskempson/base16-vim)
 " by Chris Kempson (http://chriskempson.com)
 " Chalk scheme by Chris Kempson (http://chriskempson.com)
@@ -39,7 +41,7 @@ let s:cterm08 = "01"
 let s:cterm0A = "03"
 let s:cterm0B = "02"
 let s:cterm0C = "06"
-let s:cterm0D = "75"
+let s:cterm0D = "04"
 let s:cterm0E = "05"
 if exists('base16colorspace') && base16colorspace == "256"
   let s:cterm01 = "18"
@@ -51,10 +53,36 @@ if exists('base16colorspace') && base16colorspace == "256"
 else
   let s:cterm01 = "10"
   let s:cterm02 = "11"
-  let s:cterm04 = "75"
+  let s:cterm04 = "12"
   let s:cterm06 = "13"
   let s:cterm09 = "09"
   let s:cterm0F = "14"
+endif
+
+" Neovim terminal colours
+if has("nvim")
+  let g:terminal_color_0 =  "#151515"
+  let g:terminal_color_1 =  "#fb9fb1"
+  let g:terminal_color_2 =  "#acc267"
+  let g:terminal_color_3 =  "#ddb26f"
+  let g:terminal_color_4 =  "#6fc2ef"
+  let g:terminal_color_5 =  "#e1a3ee"
+  let g:terminal_color_6 =  "#12cfc0"
+  let g:terminal_color_7 =  "#d0d0d0"
+  let g:terminal_color_8 =  "#505050"
+  let g:terminal_color_9 =  "#eda987"
+  let g:terminal_color_10 = "#202020"
+  let g:terminal_color_11 = "#303030"
+  let g:terminal_color_12 = "#b0b0b0"
+  let g:terminal_color_13 = "#e0e0e0"
+  let g:terminal_color_14 = "#deaf8f"
+  let g:terminal_color_15 = "#f5f5f5"
+  let g:terminal_color_background = g:terminal_color_0
+  let g:terminal_color_foreground = g:terminal_color_7
+  if &background == "light"
+    let g:terminal_color_background = g:terminal_color_7
+    let g:terminal_color_foreground = g:terminal_color_2
+  endif
 endif
 
 " Theme setup
@@ -93,14 +121,14 @@ call <sid>hi("ErrorMsg",      s:gui08, s:gui00, s:cterm08, s:cterm00, "", "")
 call <sid>hi("Exception",     s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("FoldColumn",    s:gui0C, s:gui01, s:cterm0C, s:cterm01, "", "")
 call <sid>hi("Folded",        s:gui03, s:gui01, s:cterm03, s:cterm01, "", "")
-call <sid>hi("IncSearch",     s:gui01, s:gui0A, s:cterm01, s:cterm0A, "none", "")
+call <sid>hi("IncSearch",     s:gui01, '8a8a8a', s:cterm01, s:cterm0A, "none", "")
 call <sid>hi("Italic",        "", "", "", "", "none", "")
 call <sid>hi("Macro",         s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("MatchParen",    s:gui00, s:gui03, s:cterm00, s:cterm03,  "", "")
 call <sid>hi("ModeMsg",       s:gui0B, "", s:cterm0B, "", "", "")
 call <sid>hi("MoreMsg",       s:gui0B, "", s:cterm0B, "", "", "")
 call <sid>hi("Question",      s:gui0D, "", s:cterm0D, "", "", "")
-call <sid>hi("Search",        s:gui01, s:gui0A, s:cterm01, s:cterm0A,  "", "")
+call <sid>hi("Search",        'e0432f', '40304f', s:cterm01, s:cterm0A,  "", "")
 call <sid>hi("SpecialKey",    s:gui03, "", s:cterm03, "", "", "")
 call <sid>hi("TooLong",       s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("Underlined",    s:gui08, "", s:cterm08, "", "", "")
@@ -187,8 +215,21 @@ call <sid>hi("DiffLine",     s:gui0D, s:gui00,  s:cterm0D, s:cterm00, "", "")
 call <sid>hi("DiffRemoved",  s:gui08, s:gui00,  s:cterm08, s:cterm00, "", "")
 
 " Git highlighting
-call <sid>hi("gitCommitOverflow",  s:gui08, "", s:cterm08, "", "", "")
-call <sid>hi("gitCommitSummary",   s:gui0B, "", s:cterm0B, "", "", "")
+call <sid>hi("gitcommitOverflow",       s:gui08, "", s:cterm08, "", "", "")
+call <sid>hi("gitcommitSummary",        s:gui0B, "", s:cterm0B, "", "", "")
+call <sid>hi("gitcommitComment",        s:gui03, "", s:cterm03, "", "", "")
+call <sid>hi("gitcommitUntracked",      s:gui03, "", s:cterm03, "", "", "")
+call <sid>hi("gitcommitDiscarded",      s:gui03, "", s:cterm03, "", "", "")
+call <sid>hi("gitcommitSelected",       s:gui03, "", s:cterm03, "", "", "")
+call <sid>hi("gitcommitHeader",         s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("gitcommitSelectedType",   s:gui0D, "", s:cterm0D, "", "", "")
+call <sid>hi("gitcommitUnmergedType",   s:gui0D, "", s:cterm0D, "", "", "")
+call <sid>hi("gitcommitDiscardedType",  s:gui0D, "", s:cterm0D, "", "", "")
+call <sid>hi("gitcommitBranch",         s:gui09, "", s:cterm09, "", "bold", "")
+call <sid>hi("gitcommitUntrackedFile",  s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("gitcommitUnmergedFile",   s:gui08, "", s:cterm08, "", "bold", "")
+call <sid>hi("gitcommitDiscardedFile",  s:gui08, "", s:cterm08, "", "bold", "")
+call <sid>hi("gitcommitSelectedFile",   s:gui0B, "", s:cterm0B, "", "bold", "")
 
 " GitGutter highlighting
 call <sid>hi("GitGutterAdd",     s:gui0B, s:gui01, s:cterm0B, s:cterm01, "", "")
@@ -208,30 +249,22 @@ call <sid>hi("javaScriptBraces",  s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("javaScriptNumber",  s:gui09, "", s:cterm09, "", "", "")
 call <sid>hi("javascriptCommentTodo",  s:gui05, "", s:cterm05, "", "", "")
 
-" let s:gui05 = "D4B0B5"
-" call <sid>hi("javascriptIdentifierName",  "d0d0d0", "", s:cterm05, "", "", "")
-"
-" call <sid>hi("javascriptCommentTodo",  s:gui05, "", s:cterm05, "", "", "")
-" call <sid>hi("jsFuncParens",  s:gui05, "", s:cterm05, "", "", "")
-" call <sid>hi("jsFuncBraces",  s:gui05, "", s:cterm05, "", "", "")
-" call <sid>hi("jsParens",  s:gui05, "", s:cterm05, "", "", "")
-" call <sid>hi("jsBraces",  s:gui05, "", s:cterm05, "", "", "")
-"   call s:HL("javaScriptBraces", s:blue, "", "")
-"   call s:HL("javaScriptParens", s:blue, "", "")
-"   call s:HL("javaScriptIdentifier", s:pink, "", "")
-"   call s:HL("javaScriptFunction", s:blue, "", "bold")
-"   call s:HL("javaScriptConditional", s:purple, "", "bold")
-"   call s:HL("javaScriptRepeat", s:purple, "", "bold")
-"   call s:HL("javaScriptBoolean", s:green, "", "bold")
-"   call s:HL("javaScriptNumber", s:orange, "", "")
-"   call s:HL("javaScriptMember", s:navy, "", "")
-"   call s:HL("javaScriptReserved", s:navy, "", "")
-"   call s:HL("javascriptNull", s:comment, "", "bold")
-"   call s:HL("javascriptGlobal", s:foreground, "", "")
-"   call s:HL("javascriptStatement", s:pink, "", "")
-"   call s:HL("javaScriptMessage", s:foreground, "", "")
-"   call s:HL("javaScriptMember", s:foreground, "", "")
-
+" pangloss/vim-javascript highlighting
+call <sid>hi("jsOperator",          s:gui0D, "", s:cterm0D, "", "", "")
+call <sid>hi("jsStatement",         s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("jsReturn",            s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("jsThis",              s:gui08, "", s:cterm08, "", "", "")
+call <sid>hi("jsClassDefinition",   s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("jsFunction",          s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("jsFuncName",          s:gui0D, "", s:cterm0D, "", "", "")
+call <sid>hi("jsFuncCall",          s:gui0D, "", s:cterm0D, "", "", "")
+call <sid>hi("jsClassFuncName",     s:gui0D, "", s:cterm0D, "", "", "")
+call <sid>hi("jsClassMethodType",   s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("jsRegexpString",      s:gui0C, "", s:cterm0C, "", "", "")
+call <sid>hi("jsGlobalObjects",     s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("jsGlobalNodeObjects", s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("jsExceptions",        s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("jsBuiltins",          s:gui0A, "", s:cterm0A, "", "", "")
 
 " Mail highlighting
 call <sid>hi("mailQuoted1",  s:gui0A, "", s:cterm0A, "", "", "")
@@ -296,4 +329,4 @@ delf <sid>hi
 unlet s:gui00 s:gui01 s:gui02 s:gui03  s:gui04  s:gui05  s:gui06  s:gui07  s:gui08  s:gui09 s:gui0A  s:gui0B  s:gui0C  s:gui0D  s:gui0E  s:gui0F
 unlet s:cterm00 s:cterm01 s:cterm02 s:cterm03 s:cterm04 s:cterm05 s:cterm06 s:cterm07 s:cterm08 s:cterm09 s:cterm0A s:cterm0B s:cterm0C s:cterm0D s:cterm0E s:cterm0F
 " source $HOME/.config/nvim/plugged/base16-vim/defaults_dark.vim
-source $HOME/.DOTFILES/forkedProjects/base16-vim/defaults_dark.vim
+source $HOME/.DOTFILES/config/nvim/plugged/base16-vim/defaults_dark.vim

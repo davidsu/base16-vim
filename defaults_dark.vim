@@ -23,7 +23,9 @@ hi Comment guifg=#A0A091 guibg=NONE
 
 hi StatusLine guifg=#6D4A31 ctermbg=001
 hi StatusLineNC guibg=#6D4A31
-
+hi Pmenu guibg=#3a3a3a
+hi WildMenu guifg=#e2af48 guibg=#3a3a3a
+hi StatusLine guifg=#ffffff guibg=#626262
 
 " terminal with true colors need some help...
 let g:terminal_color_10="#7ABB5E"
