@@ -1,7 +1,13 @@
-highlight DiffAdd ctermfg=NONE ctermbg=22 guibg=#1A4D22 guifg=NONE
+highlight DiffAdd ctermfg=NONE ctermbg=22 guibg=#16303d guifg=NONE
+" highlight DiffAdded guibg=#16303d guifg=NONE
+" highlight DiffRemoved guibg=#246b2e guifg=NONE
+" highlight DiffAdd ctermfg=NONE ctermbg=22 guibg=#246b2e guifg=NONE
 highlight DiffChange ctermfg=NONE ctermbg=237 guibg=#4D4306 guifg=NONE
 highlight DiffText ctermfg=NONE ctermbg=25 guibg=#004689 guifg=NONE
 highlight DiffDelete ctermfg=NONE ctermbg=52 guibg=#5D1F24 
+hi zshVariable guifg=#fb9fb1
+hi zshKeyword guifg=#6fc2ef
+hi zshPreProc guifg=#A0A091
 
 silent! autocmd! Colorstuff
 augroup Colorstuff
