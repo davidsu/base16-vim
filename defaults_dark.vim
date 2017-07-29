@@ -24,6 +24,11 @@ highlight Visual guibg=#003A70
 hi MatchParen cterm=bold ctermbg=197 ctermfg=232 guifg=#000000 guibg=#F72B59
 highlight ColorColumn guibg=#302E27
 
+" toggle invisible characters
+" make the highlighting of tabs less annoying
+highlight SpecialKey ctermbg=none ctermfg=8 
+highlight NonText ctermbg=none ctermfg=8
+
 hi Folded guifg=#A4C662 guibg=#444444
 hi Comment guifg=#A0A091 guibg=NONE cterm=italic
 highlight htmlArg cterm=italic
