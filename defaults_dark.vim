@@ -16,8 +16,8 @@ augroup Colorstuff
   autocmd InsertLeave * highlight CursorLine guibg=#404344
   autocmd InsertLeave * highlight CursorColumn guibg=#404344
 augroup END
-highlight CursorLine guibg=#404344
-highlight CursorColumn guibg=#404344
+highlight CursorLine guibg=#404344 ctermbg=24
+highlight CursorColumn guibg=#404344 ctermbg=24
 highlight CursorLineNr guifg=#ffff00
 highlight Visual guibg=#003A70 
 
@@ -25,7 +25,8 @@ hi MatchParen cterm=bold ctermbg=197 ctermfg=232 guifg=#000000 guibg=#F72B59
 highlight ColorColumn guibg=#302E27
 
 hi Folded guifg=#A4C662 guibg=#444444
-hi Comment guifg=#A0A091 guibg=NONE
+hi Comment guifg=#A0A091 guibg=NONE cterm=italic
+highlight htmlArg cterm=italic
 
 hi StatusLine guifg=#6D4A31 ctermbg=001
 hi StatusLineNC guibg=#6D4A31
