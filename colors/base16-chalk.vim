@@ -8,6 +8,10 @@
 " :colorscheme works in terminals supported by base16-shell scripts
 " User must set this variable in .vimrc
 "   let g:base16_shell_path=base16-builder/output/shell/
+if exists('g:base16chalkloaded')
+  finish
+endif
+let g:base16chalkloaded=1
 if !has('gui_running')
   if exists("g:base16_shell_path")
     execute "silent !/bin/sh ".g:base16_shell_path."/base16-chalk.sh"
@@ -329,4 +333,4 @@ delf <sid>hi
 unlet s:gui00 s:gui01 s:gui02 s:gui03  s:gui04  s:gui05  s:gui06  s:gui07  s:gui08  s:gui09 s:gui0A  s:gui0B  s:gui0C  s:gui0D  s:gui0E  s:gui0F
 unlet s:cterm00 s:cterm01 s:cterm02 s:cterm03 s:cterm04 s:cterm05 s:cterm06 s:cterm07 s:cterm08 s:cterm09 s:cterm0A s:cterm0B s:cterm0C s:cterm0D s:cterm0E s:cterm0F
 " source $HOME/.config/nvim/plugged/base16-vim/defaults_dark.vim
-source $HOME/.DOTFILES/config/nvim/plugged/base16-vim/defaults_dark.vim
+source $DOTFILES/config/nvim/plugged/base16-vim/defaults_dark.vim
