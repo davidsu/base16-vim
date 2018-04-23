@@ -181,7 +181,8 @@ call <sid>hi("Repeat",       s:gui0A, "", s:cterm0A, "", "", "")
 call <sid>hi("Special",      s:gui0C, "", s:cterm0C, "", "", "")
 call <sid>hi("SpecialChar",  s:gui0F, "", s:cterm0F, "", "", "")
 call <sid>hi("Statement",    s:gui08, "", s:cterm08, "", "", "")
-call <sid>hi("StorageClass", s:gui0A, "", s:cterm0A, "", "", "")
+" call <sid>hi("StorageClass", s:gui0A, "", s:cterm0A, "", "", "")
+highlight link StorageClass             Identifier
 call <sid>hi("String",       s:gui0B, "", s:cterm0B, "", "", "")
 call <sid>hi("Structure",    s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("Tag",          s:gui0A, "", s:cterm0A, "", "", "")
@@ -248,24 +249,37 @@ call <sid>hi("htmlEndTag",  s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("htmlTag",     s:gui05, "", s:cterm05, "", "", "")
 
 " JavaScript highlighting
-call <sid>hi("javaScript",        s:gui05, "", s:cterm05, "", "", "")
-call <sid>hi("javaScriptBraces",  s:gui05, "", s:cterm05, "", "", "")
-call <sid>hi("javaScriptNumber",  s:gui09, "", s:cterm09, "", "", "")
-call <sid>hi("javascriptCommentTodo",  s:gui05, "", s:cterm05, "", "", "")
+call <sid>hi("javaScript",            s:gui05, "", s:cterm05, "", "", "")
+call <sid>hi("javaScriptBraces",      s:gui05, "", s:cterm05, "", "", "")
+call <sid>hi("javaScriptNumber",      s:gui09, "", s:cterm09, "", "", "")
+call <sid>hi("javascriptCommentTodo", s:gui05, "", s:cterm05, "", "", "")
 
+highlight link jsFuncArgs             Special
+" HiLink jsFuncArgs              Special
 " pangloss/vim-javascript highlighting
-call <sid>hi("jsOperator",          s:gui0D, "", s:cterm0D, "", "", "")
+" call <sid>hi("jsOperator",          s:gui0D, "", s:cterm0D, "", "", "")
+highlight link jsOperator Identifier
 call <sid>hi("jsStatement",         s:gui0E, "", s:cterm0E, "", "", "")
-call <sid>hi("jsReturn",            s:gui0E, "", s:cterm0E, "", "", "")
+" call <sid>hi("jsReturn",            s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("jsThis",              s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("jsClassDefinition",   s:gui0A, "", s:cterm0A, "", "", "")
 call <sid>hi("jsFunction",          s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("jsFuncName",          s:gui0D, "", s:cterm0D, "", "", "")
-call <sid>hi("jsFuncCall",          s:gui0D, "", s:cterm0D, "", "", "")
+call <sid>hi("jsFuncCall",      s:gui0E, "", s:cterm0E, "", "", "")
+" call <sid>hi("jsFuncCall",          s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("jsClassFuncName",     s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("jsClassMethodType",   s:gui0E, "", s:cterm0E, "", "", "")
-call <sid>hi("jsRegexpString",      s:gui0C, "", s:cterm0C, "", "", "")
-call <sid>hi("jsGlobalObjects",     s:gui0A, "", s:cterm0A, "", "", "")
+" call <sid>hi("jsRegexpString",      s:gui0C, "", s:cterm0C, "", "", "")
+highlight link jsRegexpString             String
+highlight link jsSpecial             String
+highlight link jsObjectKey             Type
+highlight link jsTemplateBraces             Type
+highlight link jsTemplateExpression             jsFuncCall
+highlight link jsReturn             StorageClass
+
+" hilight jsRegexpString
+" call <sid>hi("jsGlobalObjects",     s:gui0A, "", s:cterm0A, "", "", "")
+highlight link jsGlobalObjects jsFuncCall
 call <sid>hi("jsGlobalNodeObjects", s:gui0A, "", s:cterm0A, "", "", "")
 call <sid>hi("jsExceptions",        s:gui0A, "", s:cterm0A, "", "", "")
 call <sid>hi("jsBuiltins",          s:gui0A, "", s:cterm0A, "", "", "")
