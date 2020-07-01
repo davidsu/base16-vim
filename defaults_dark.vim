@@ -21,7 +21,7 @@ highlight CursorColumn guibg=#404344 ctermbg=24
 highlight CursorLineNr guifg=#ffff00
 highlight Visual guibg=#003A70 
 
-hi MatchParen cterm=bold ctermbg=197 ctermfg=232 guifg=#000000 guibg=#F72B59
+hi MatchParen cterm=bold ctermbg=197 ctermfg=232 guifg=#F72B59 guibg=#000000 
 highlight ColorColumn guibg=#302E27
 
 " toggle invisible characters
