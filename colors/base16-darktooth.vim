@@ -15,22 +15,26 @@ if !has('gui_running')
 endif
 
 " GUI color definitions
-let s:gui00 = "1D2021"
-let s:gui01 = "32302F"
-let s:gui02 = "504945"
-let s:gui03 = "665C54"
-let s:gui04 = "928374"
-let s:gui05 = "A89984"
-let s:gui06 = "D5C4A1"
-let s:gui07 = "FDF4C1"
-let s:gui08 = "FB543F"
-let s:gui09 = "FE8625"
-let s:gui0A = "FAC03B"
-let s:gui0B = "95C085"
-let s:gui0C = "8BA59B"
-let s:gui0D = "0D6678"
-let s:gui0E = "8F4673"
-let s:gui0F = "A87322"
+let s:gui00 = "#151515"
+let s:gui01 = "#32302F"
+let s:gui02 = "#504945"
+let s:gui03 = "#665C54"
+let s:gui04 = "#928374"
+let s:gui05 = "#a69886"
+let s:gui06 = "#D5C4A1"
+"yellow
+let s:gui07 = "#FDF4C1"
+"red
+let s:gui08 = "#c97c73"
+"orange
+let s:gui09 = "#c2824e"
+"yellow
+let s:gui0A = "#c2ba84"
+let s:gui0B = "#95C085"
+let s:gui0C = "#8BA59B"
+let s:gui0D = "#7c9da3"
+let s:gui0E = "#ba91a9"
+let s:gui0F = "#ad9268"
 
 " Terminal color definitions
 let s:cterm00 = "00"
@@ -93,10 +97,10 @@ let g:colors_name = "base16-darktooth"
 " Highlighting function
 fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
   if a:guifg != ""
-    exec "hi " . a:group . " guifg=#" . a:guifg
+    exec "hi " . a:group . " guifg=" . a:guifg
   endif
   if a:guibg != ""
-    exec "hi " . a:group . " guibg=#" . a:guibg
+    exec "hi " . a:group . " guibg=" . a:guibg
   endif
   if a:ctermfg != ""
     exec "hi " . a:group . " ctermfg=" . a:ctermfg
@@ -108,7 +112,7 @@ fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
     exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
   endif
   if a:guisp != ""
-    exec "hi " . a:group . " guisp=#" . a:guisp
+    exec "hi " . a:group . " guisp=" . a:guisp
   endif
 endfun
 
@@ -263,6 +267,7 @@ call <sid>hi("jsGlobalObjects",     s:gui0A, "", s:cterm0A, "", "", "")
 call <sid>hi("jsGlobalNodeObjects", s:gui0A, "", s:cterm0A, "", "", "")
 call <sid>hi("jsExceptions",        s:gui0A, "", s:cterm0A, "", "", "")
 call <sid>hi("jsBuiltins",          s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("TSVariable",          s:gui05, "", "",        "", "", "")
 
 " Mail highlighting
 call <sid>hi("mailQuoted1",  s:gui0A, "", s:cterm0A, "", "", "")
@@ -314,14 +319,19 @@ call <sid>hi("SignifySignChange",  s:gui0D, s:gui01, s:cterm0D, s:cterm01, "", "
 call <sid>hi("SignifySignDelete",  s:gui08, s:gui01, s:cterm08, s:cterm01, "", "")
 
 " Spelling highlighting
-call <sid>hi("SpellBad",     "", s:gui00, "", s:cterm00, "undercurl", s:gui08)
+call <sid>hi("SpellBad",     "", "", "", s:cterm00, "", s:gui08)
 call <sid>hi("SpellLocal",   "", s:gui00, "", s:cterm00, "undercurl", s:gui0C)
 call <sid>hi("SpellCap",     "", s:gui00, "", s:cterm00, "undercurl", s:gui0D)
 call <sid>hi("SpellRare",    "", s:gui00, "", s:cterm00, "undercurl", s:gui0E)
 
 " Remove functions
 delf <sid>hi
-
+hi CocUnderline cterm=NONE gui=NONE
+hi CocErrorVirtualText guifg=#69302a
+hi CocErrorSign guifg=#ba2614 guibg=#32302F
+" hack to stop coc annoying underlines, wouldn't work without defering
+" lua vim.defer_fn(function() vim.api.nvim_command('hi CocUnderline cterm=NONE gui=NONE') end, 1100)
 " Remove color variables
 unlet s:gui00 s:gui01 s:gui02 s:gui03  s:gui04  s:gui05  s:gui06  s:gui07  s:gui08  s:gui09 s:gui0A  s:gui0B  s:gui0C  s:gui0D  s:gui0E  s:gui0F
 unlet s:cterm00 s:cterm01 s:cterm02 s:cterm03 s:cterm04 s:cterm05 s:cterm06 s:cterm07 s:cterm08 s:cterm09 s:cterm0A s:cterm0B s:cterm0C s:cterm0D s:cterm0E s:cterm0F
+source $DOTFILES/config/nvim/plugged/base16-vim/defaults_dark.vim
